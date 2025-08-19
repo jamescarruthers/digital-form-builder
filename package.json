@@ -18,7 +18,7 @@
     "submitter"
   ],
   "scripts": {
-    "start": "cd designer && yarn start",
+    "start": "cd designer && node dist/server.js",
     "setup": "yarn && yarn build",
     "build": "yarn workspaces foreach run build",
     "lint": "yarn workspaces foreach run lint",
