@@ -20,7 +20,6 @@
   "scripts": {
     "setup": "yarn && yarn build",
     "build": "yarn workspaces foreach run build",
-    "build:dependencies": "yarn model build && yarn queue-model build",
     "lint": "yarn workspaces foreach run lint",
     "test": "yarn workspaces foreach run test",
     "fix-lint": "yarn workspaces foreach run fix-lint",
@@ -35,7 +34,10 @@
     "runner:start": "yarn workspace @xgovformbuilder/runner start",
     "type-check": "yarn workspaces foreach run tsc --noEmit",
     "type-check:watch": "yarn workspaces foreach run type-check --watch",
-    "generate-architecture-diagrams": "concurrently 'npx arkit -c ./docs/designer/arkit.json' 'npx arkit -c ./docs/model/arkit.json' 'npx arkit -c ./docs/runner/arkit.json'"
+    "generate-architecture-diagrams": "concurrently 'npx arkit -c ./docs/designer/arkit.json' 'npx arkit -c ./docs/model/arkit.json' 'npx arkit -c ./docs/runner/arkit.json'",
+    "build:dependencies": "yarn workspace @xgovformbuilder/model build",
+    "heroku-postbuild": "yarn build:dependencies && yarn build"
+
   },
   "devDependencies": {
     "@babel/cli": "^7.23.3",
