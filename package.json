@@ -18,6 +18,7 @@
     "submitter"
   ],
   "scripts": {
+    "start": "yarn workspace @xgovformbuilder/designer",
     "setup": "yarn && yarn build",
     "build": "yarn workspaces foreach run build",
     "lint": "yarn workspaces foreach run lint",
